@@ -33,7 +33,7 @@ Before running the pull, compare the watchlist + feed configuration in CLAUDE.md
 - Which categories (US federal / US state / EU-UK / international) does the user care about per their watchlist?
 - Which of those categories have zero or very few sources configured?
 
-If there's an obvious gap — e.g., user watches "EU regulators" in the watchlist but has only `edpb.europa.eu` configured in feeds, missing ICO, CNIL, DPC Ireland — surface it once at the top of the digest:
+If there's an obvious gap — e.g., user watches "agências de proteção de dados" in the watchlist but has only `anpd.gov.br` configured in feeds, missing CADE, PROCON estaduais — surface it once at the top of the digest:
 
 > **Coverage gap noticed:** Your watchlist includes [category], but only [N] feeds are configured. The source catalog lists [X] options in this category (e.g., [top 2-3 names]). Want me to suggest additions? Run `/regulatory-legal:cold-start-interview --redo` to update, or edit `~/.claude/plugins/config/claude-for-legal/regulatory-legal/CLAUDE.md` directly.
 

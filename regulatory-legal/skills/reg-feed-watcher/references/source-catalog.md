@@ -45,8 +45,8 @@ configure as "manual" or set up web-page change detection.
 
 | Source | Feed URL | Format | Covers | Auth | Notes |
 |---|---|---|---|---|---|
-| California AG | `https://oag.ca.gov/news/feed/729/oag.ca.gov` | RSS | Press releases, CCPA enforcement, multistate actions | None | Main press page: `oag.ca.gov/media/news`. |
-| California Privacy Protection Agency (CPPA) | `https://cppa.ca.gov/announcements/` | HTML | CCPA regulations, enforcement, advisories | None | ⚠️ No direct RSS URL located — primary channel is email list (sign-up on page). Monitor page for changes or use manual entry. |
+| California AG | `https://oag.ca.gov/news/feed/729/oag.ca.gov` | RSS | Press releases, LGPD enforcement, multistate actions | None | Main press page: `oag.ca.gov/media/news`. |
+| California Privacy Protection Agency (CPPA) | `https://cppa.ca.gov/announcements/` | HTML | LGPD regulations, enforcement, advisories | None | ⚠️ No direct RSS URL located — primary channel is email list (sign-up on page). Monitor page for changes or use manual entry. |
 | New York AG | `https://ag.ny.gov/press-releases` | HTML | Press releases, multistate AG actions | None | ⚠️ No public RSS located. Monthly archive at `ag.ny.gov/press-releases-for-month` is structured enough to scrape. |
 | Texas AG — News Releases | `https://www2.texasattorneygeneral.gov/feeds/feeds.php?feed=pr` | RSS | Press releases | None | Additional feeds on `www2.texasattorneygeneral.gov/agency/feeds`. |
 | Illinois AG | `https://illinoisattorneygeneral.gov/news-room/` | HTML | Press releases | None | ⚠️ No public RSS located. |
@@ -66,9 +66,9 @@ configure as "manual" or set up web-page change detection.
 | EDPB News | `https://www.edpb.europa.eu/news/news_en` | RSS (2 feeds offered) | Guidelines, opinions, enforcement summaries, binding decisions | None | Feeds advertised at `edpb.europa.eu/sme-data-protection-guide/faq-frequently-asked-questions/answer/how-can-i-keep-edpbs-work_en`. |
 | European Commission Press Corner | `https://ec.europa.eu/commission/presscorner/` | RSS + email | Press releases, speeches, Q&As — DSA, DMA, AI Act implementing acts | None | Subscribe at `ec.europa.eu/commission/presscorner/login/en`. Narrower sub-feeds by topic. |
 | EUR-Lex (OJ) | `https://eur-lex.europa.eu/` | Webservice + RSS by search | Official Journal publications | Key (free, webservice) | Use for tracking final-form regulations and directives. |
-| ICO (UK) | `https://ico.org.uk/global/rss-feeds/` | RSS (multiple feeds) | Enforcement, guidance, news, consultations | None | Separate feeds for news, enforcement actions, and blog. Enforcement list also at `ico.org.uk/action-weve-taken/enforcement/`. |
+| ANPD (Brasil) | `https://www.gov.br/anpd/pt-br/assuntos/noticias` | HTML + email | Enforcement, orientações, notícias, consultas públicas | None | ⚠️ Sem feed RSS direto — acompanhar pelo portal ou pelo DOU (in.gov.br). Deliberações do Conselho Diretor publicadas no Diário Oficial da União. |
 | CNIL (France) | `https://www.cnil.fr/en/rss.xml` (verify — feeder.co indexes this) | RSS | French DPA decisions, guidance, sanctions | None | English-language news at `cnil.fr/en/news`. Third-party indexes suggest feed exists; verify before relying. |
-| DPC (Ireland) | `https://www.dataprotection.ie/en/news-media/latest-news` | HTML | Inquiries, decisions, guidance — lead DPA for most US tech firms | None | ⚠️ No public RSS located. Critical source for GDPR enforcement against US companies; worth a change-detection or email subscription. |
+| DPC (Ireland) | `https://www.dataprotection.ie/en/news-media/latest-news` | HTML | Inquiries, decisions, guidance — DPA líder para empresas com operações na UE | None | ⚠️ Sem RSS público. Relevante para empresas brasileiras com operações na UE; LGPD é o equivalente nacional ao GDPR. Vale change-detection ou email subscription. |
 | BfDI (Germany) | `https://www.bfdi.bund.de/EN/Home/home_node.html` | HTML | Federal German DPA | None | ⚠️ No public RSS located. |
 | ENISA | — | Email | Cybersecurity, NIS2 guidance | None | ⚠️ **RSS feeds discontinued** with new website. Email alerts only until new subscription mechanism launches (`enisa.europa.eu/rss-feeds-discontinued-new-subscription-mechanism-coming-soon`). |
 | FCA (UK) | `https://www.fca.org.uk/news/rss.xml` (verify) | RSS + email | UK financial services rules, enforcement, warnings | None | Email alerts at `fca.org.uk/newsletters-emails-sign-up` are the supported channel; RSS historically offered. |
@@ -119,7 +119,7 @@ Monitoring them requires either:
 |---|---|---|
 | OFAC Recent Actions | `https://ofac.treasury.gov/recent-actions` | RSS retired Jan 2025; email is supported channel |
 | ENISA | `https://www.enisa.europa.eu/news` | RSS discontinued; new subscription mechanism pending |
-| DPC Ireland | `https://www.dataprotection.ie/en/news-media/latest-news` | No RSS; critical for GDPR enforcement |
+| DPC Ireland | `https://www.dataprotection.ie/en/news-media/latest-news` | No RSS; relevante para empresas brasileiras com operações na UE (LGPD e GDPR) |
 | CPPA | `https://cppa.ca.gov/announcements/` | Email list only; no RSS located |
 | Most state AGs (NY, IL, CO, CT, VA, MA) | See state table above | Press-release HTML pages; no RSS |
 | NYDFS | `https://www.dfs.ny.gov/reports_and_publications/press_releases` | HTML only |
@@ -132,9 +132,9 @@ Monitoring them requires either:
 
 ## Suggested starter packs
 
-**Privacy-focused in-house team (US + EU):**
+**Privacy-focused in-house team (US + EU + BR):**
 Federal Register (FTC, HHS/OCR agency filters), FTC RSS, CFPB, CA AG, CPPA (email),
-NY AG (page watch), EDPB, ICO, CNIL, DPC Ireland (page watch), IAPP, FPF.
+NY AG (page watch), EDPB, ANPD, CNIL, DPC Ireland (page watch), IAPP, FPF.
 
 **Commercial / regulatory in-house team (broad):**
 Federal Register (all agencies of interest), SEC RSS, CFPB, DOJ Antitrust, DOJ

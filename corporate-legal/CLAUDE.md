@@ -78,16 +78,16 @@ The deliverable should read like a partner wrote it. The meta-commentary goes in
 
 **The header's protection is jurisdiction-specific.** "Attorney work product" is a US doctrine (FRCP 26(b)(3)). It does not exist in most other legal systems, and asserting it on a document does not create it:
 
-- **EU:** No general work-product protection. Legal professional privilege (LPP) protects communications with external counsel for the purpose of legal advice, but internal analyses, DPIAs, compliance assessments, and launch reviews are generally NOT shielded from supervisory authorities. Art. 58(1) GDPR gives DPAs broad investigative powers. A DG COMP dawn raid can seize a "privileged" launch review.
+- **Brasil:** No equivalent to US *attorney work product* in Brazilian law. The advogado's sigilo profissional (EOAB art. 7º, II; Lei 8.906/94) protects communications with external counsel for legal advice purposes, but internal analyses, RIPDs (Relatórios de Impacto à Proteção de Dados), compliance assessments, and due-diligence reports are generally NOT shielded from supervisory authorities. The LGPD (Lei 13.709/2018) grants the ANPD broad investigative powers. An ANPD or CADE enforcement action can seize a "confidential" in-house legal analysis.
 - **UK:** Litigation privilege (similar to work product) requires litigation to be in reasonable contemplation at the time the document was created. An advisory memo created in the ordinary course is not protected by litigation privilege.
-- **Germany, France, others:** No equivalent to US work product. Protections vary and are generally narrower.
+- **Other jurisdictions:** No equivalent to US work product. Protections vary and are generally narrower.
 
-**When the practice profile's jurisdiction footprint includes non-US jurisdictions,** adjust the header:
+**When the practice profile's jurisdiction footprint includes non-Brazilian jurisdictions,** adjust the header:
 - Keep `PRIVILEGED & CONFIDENTIAL` (confidentiality markings are meaningful everywhere).
-- Add a jurisdiction note: `[Note: "work product" protection is a US doctrine. Protections in [jurisdiction] differ — confirm the applicable privilege/confidentiality regime before relying on this marking to shield the document from disclosure.]`
-- For EU users: consider `CONFIDENTIAL — INTERNAL LEGAL ANALYSIS — NOT A SUBSTITUTE FOR EXTERNAL COUNSEL ADVICE` which is honest and doesn't assert a protection that doesn't exist.
+- Add a jurisdiction note: `[Note: "sigilo profissional" is a Brazilian law concept. Protections in [jurisdiction] differ — confirm the applicable privilege/confidentiality regime before relying on this marking to shield the document from disclosure.]`
+- For Brazilian users: consider `CONFIDENCIAL — ANÁLISE JURÍDICA INTERNA — NÃO SUBSTITUI ACONSELHAMENTO JURÍDICO EXTERNO` which is honest and doesn't assert a protection that doesn't exist.
 
-A false assurance of protection is worse than no marking. The lawyer who relies on "ATTORNEY WORK PRODUCT" to shield a DPIA from their DPA is the lawyer who loses the argument.
+A false assurance of protection is worse than no marking. The lawyer who relies on "ATTORNEY WORK PRODUCT" to shield a RIPD from the ANPD is the lawyer who loses the argument.
 
 *Remove the header from externally-facing deliverables (executed consents, filed documents, letters, responses) — see the specific skill's instructions. Corporate records (executed consents, adopted minutes) are never labeled privileged; only the drafting notes and analysis attached to them are.*
 

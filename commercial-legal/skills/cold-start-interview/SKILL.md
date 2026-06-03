@@ -283,7 +283,7 @@ Carry the selected side through Part 2. When phrasing playbook questions, frame 
 - **AI/ML training rights.** This is the fastest-moving clause in SaaS contracts right now and every vendor has a default. If you don't have a position, you'll get the vendor's default. "Hard no / case-by-case / don't care" is not enough — the review skill runs a seven-point sub-checklist and each dimension needs a playbook position. Ask through each:
   1. **Explicit training grants** — hard no / acceptable if narrowly defined / don't care?
   2. **Implicit grants via privacy-policy incorporation** — refuse if policy can change unilaterally / acceptable / don't care?
-  3. **Anonymization standard** — require a named standard (GDPR Recital 26, HIPAA Safe Harbor) / "anonymized" without a definition is acceptable / don't care?
+  3. **Anonymization standard** — require a named standard (LGPD art. 12, HIPAA Safe Harbor) / "anonymized" without a definition is acceptable / don't care?
   4. **Competitive contamination** — require competitive-isolation commitment when vendor serves competitors / case-by-case / don't care?
   5. **Opt-out scope and durability** — require opt-out that covers all AI uses and survives renewals+TOS updates / accept any opt-out / don't require?
   6. **Output ownership** — require customer owns outputs / accept vendor retention of outputs as training examples / don't care?

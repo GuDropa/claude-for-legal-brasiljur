@@ -73,16 +73,16 @@ The deliverable should read like a partner wrote it. The meta-commentary goes in
 
 **The header's protection is jurisdiction-specific.** "Attorney work product" is a US doctrine (FRCP 26(b)(3)). It does not exist in most other legal systems, and asserting it on a document does not create it:
 
-- **EU:** No general work-product protection. Legal professional privilege (LPP) protects communications with external counsel for the purpose of legal advice, but internal analyses, DPIAs, compliance assessments, and launch reviews are generally NOT shielded from supervisory authorities. Art. 58(1) GDPR gives DPAs broad investigative powers. A DG COMP dawn raid can seize a "privileged" launch review.
+- **Brasil:** Não há proteção geral equivalente ao "work product" americano. O sigilo profissional do advogado (EAOAB art. 7º, II; Lei 8.906/94) protege comunicações para fins de orientação jurídica, mas análises internas, RIPDs, avaliações de conformidade e revisões de lançamento geralmente NÃO estão protegidas perante autoridades regulatórias. O art. 55-J da LGPD (Lei 13.709/2018) confere à ANPD amplos poderes de fiscalização. Uma diligência da ANPD pode requerer acesso a análises marcadas como "privilegiadas".
 - **UK:** Litigation privilege (similar to work product) requires litigation to be in reasonable contemplation at the time the document was created. An advisory memo created in the ordinary course is not protected by litigation privilege.
 - **Germany, France, others:** No equivalent to US work product. Protections vary and are generally narrower.
 
 **When the practice profile's jurisdiction footprint includes non-US jurisdictions,** adjust the header:
 - Keep `PRIVILEGED & CONFIDENTIAL` (confidentiality markings are meaningful everywhere).
 - Add a jurisdiction note: `[Note: "work product" protection is a US doctrine. Protections in [jurisdiction] differ — confirm the applicable privilege/confidentiality regime before relying on this marking to shield the document from disclosure.]`
-- For EU users: consider `CONFIDENTIAL — INTERNAL LEGAL ANALYSIS — NOT A SUBSTITUTE FOR EXTERNAL COUNSEL ADVICE` which is honest and doesn't assert a protection that doesn't exist.
+- Para usuários no Brasil: considere `CONFIDENCIAL — ANÁLISE JURÍDICA INTERNA — NÃO SUBSTITUI ORIENTAÇÃO DE ADVOGADO` que é honesto e não afirma uma proteção inexistente.
 
-A false assurance of protection is worse than no marking. The lawyer who relies on "ATTORNEY WORK PRODUCT" to shield a DPIA from their DPA is the lawyer who loses the argument.
+A false assurance of protection is worse than no marking. The lawyer who relies on "ATTORNEY WORK PRODUCT" to shield a RIPD from the ANPD is the lawyer who loses the argument.
 
 *Remove the header from externally-facing deliverables (offer letters sent to candidates, termination letters, severance agreements circulated to counterparties, agency responses) — see the specific skill's instructions. Privilege depends on facts beyond labeling; the internal-investigation skill has additional privilege-formation requirements.*
 
