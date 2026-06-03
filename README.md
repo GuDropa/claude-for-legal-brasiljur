@@ -2,7 +2,9 @@
 
 Reference agents, skills, and data connectors for the legal workflows we see most — in-house commercial, privacy, product, corporate, employment, litigation, regulatory, AI governance, IP, and the learning side of the practice (law school clinics and students).
 
-> **New here?** Start with [QUICKSTART.md](QUICKSTART.md) — install in 60 seconds. This README is the full reference.
+> **Colega sem perfil técnico?** Comece pelo [COMECE-AQUI.md](COMECE-AQUI.md) — configuração pelo navegador, sem comandos. Este README é a referência completa para desenvolvedores e administradores.
+>
+> **New here (technical)?** This README is the full reference. Non-technical users: see [COMECE-AQUI.md](COMECE-AQUI.md).
 
 Everything here is available **two ways from one source**: install it as a [Claude Cowork](https://claude.com/product/cowork) or [Claude Code](https://claude.com/product/claude-code) plugin, or deploy it through the [Claude Managed Agents API](https://docs.claude.com/en/api/managed-agents) behind your own workflow engine. Same system prompt, same skills — you choose where it runs.
 
