@@ -23,33 +23,42 @@ sai para o cliente sem revisão do advogado responsável.
 Acesse **[claude.com/download](https://claude.com/download)**, baixe o instalador
 para o seu sistema (Windows ou Mac) e instale normalmente, como qualquer programa.
 
-### 2 · Abra o Cowork
+### 2 · Receba o arquivo do plugin
 
-Ao abrir o Claude Desktop, você verá a aba **Cowork** na barra lateral esquerda.
-Clique nela.
+Peça ao administrador (ou à pessoa que te enviou este guia) o arquivo `.zip`
+do plugin da sua área. Os arquivos disponíveis são:
 
-### 3 · Instale os plugins da sua área
-
-Dentro do Cowork:
-
-1. Clique em **Customize** (personalizar) na barra lateral
-2. Clique em **Browse plugins** (navegar plugins)
-3. Instale os plugins que fazem sentido para o seu trabalho:
-
-| Se você trabalha com… | Instale este plugin |
+| Se você trabalha com… | Arquivo a pedir |
 |---|---|
-| Contratos, NDAs, fornecedores | `commercial-legal` |
-| Admissão, demissão, RH | `employment-legal` |
-| Processos, peças, litígios | `litigation-legal` |
-| M&A, due diligence, societário | `corporate-legal` |
-| LGPD, privacidade de dados | `privacy-legal` |
-| Marcas, patentes, PI | `ip-legal` |
-| Normas regulatórias | `regulatory-legal` |
-| IA e governança de IA | `ai-governance-legal` |
-| Aprovação jurídica de produtos | `product-legal` |
-| Estudos e OAB | `law-student` |
+| Contratos, NDAs, fornecedores | `commercial-legal.zip` |
+| Admissão, demissão, RH | `employment-legal.zip` |
+| Processos, peças, litígios | `litigation-legal.zip` |
+| M&A, due diligence, societário | `corporate-legal.zip` |
+| LGPD, privacidade de dados | `privacy-legal.zip` |
+| Marcas, patentes, PI | `ip-legal.zip` |
+| Normas regulatórias | `regulatory-legal.zip` |
+| IA e governança de IA | `ai-governance-legal.zip` |
+| Aprovação jurídica de produtos | `product-legal.zip` |
+| Estudos e OAB | `law-student.zip` |
+| Tudo de uma vez | `todos-os-plugins.zip` |
 
-Pode instalar mais de um. Não tem custo adicional.
+> **Para o administrador:** gere os arquivos `.zip` executando
+> `python3 scripts/package_plugins.py` na raiz do repositório.
+> Os arquivos serão criados na pasta `dist/`. Tamanho total: ≈ 1 MB.
+
+### 3 · Instale o plugin no Claude Desktop
+
+Com o arquivo `.zip` em mãos e o Claude Desktop aberto:
+
+1. Clique na aba **Cowork** na barra lateral esquerda
+2. Clique em **Customize** (personalizar)
+3. Clique em **Browse plugins** (navegar plugins)
+4. Clique em **Upload** (ou "Carregar arquivo")
+5. Selecione o arquivo `.zip` que você recebeu
+6. Aguarde a mensagem de confirmação
+
+**Pronto — o plugin está instalado.** Repita os passos 4–6 para cada plugin que
+você quiser.
 
 ### 4 · Configure seu perfil (10 minutos por plugin)
 
