@@ -32,7 +32,7 @@ argument-hint: "[regulation name, or paste reg text/summary]"
 
 ## Purpose
 
-A state passes a new privacy law. The ICO issues new guidance. The CPPA finalizes regulations. Something moves — and now you need to know what, if anything, you have to change.
+A ANPD edita nova resolução ou orientação. O Congresso aprova nova lei de proteção de dados ou regulamentação setorial. Algo muda — e agora você precisa saber o que, se for o caso, precisa ser alterado.
 
 This skill diffs the new requirement against what you currently do (per `~/.claude/plugins/config/claude-for-legal/privacy-legal/CLAUDE.md` → Privacy policy commitments + the practices documented in PIAs) and produces a gap list with a remediation plan.
 
@@ -53,7 +53,7 @@ Before diffing, answer:
 
 - **Does it apply?** Jurisdiction (do you have data subjects there?), threshold (revenue, user count, data volume), sector carve-outs
 - **When?** Effective date, enforcement date (often later), any phase-in
-- **What's actually new?** Many "new" state privacy laws are 90% CCPA with tweaks. Identify the delta from what you already comply with, not the full text.
+- **What's actually new?** Muitas novas normas de proteção de dados se baseiam na estrutura da LGPD com adaptações setoriais. Identifique o delta em relação ao que você já cumpre, não o texto integral.
 
 ### Step 2: Extract requirements
 
@@ -99,7 +99,7 @@ Not every gap is equal. Sort by:
 
 1. **Hard deadline with teeth** — effective date + active enforcement + real penalties
 2. **Effort-to-impact ratio** — policy language update is cheap; product rebuild is not
-3. **What you've already half-done** — if you're 80% there for GDPR, the state law delta may be small
+3. **What you've already half-done** — if you're 80% there for LGPD, the sectoral law delta may be small
 
 ### Step 5: Remediation plan
 
@@ -151,7 +151,7 @@ For each category relevant to the new regulation, **research the currently opera
 >
 > **Source attribution tiering.** Tag every citation in the gap analysis with its source. For model-knowledge citations, use one of three tiers rather than a single blanket "verify" tag:
 >
-> - `[settled]` — stable, well-known statutory and regulatory references unlikely to have changed (e.g., GDPR Art. 33, CCPA § 1798.100, FTC Act § 5). Still verify before filing, but lower priority.
+> - `[settled]` — referências normativas estáveis e amplamente conhecidas com baixa probabilidade de alteração recente (ex.: LGPD art. 48 — comunicação de incidente; LGPD art. 52 — sanções até 2% do faturamento, limitado a R$ 50 milhões por infração; Resolução CD/ANPD 2/2022). Ainda assim, verifique antes de usar em documentos oficiais.
 > - `[verify]` — model-knowledge citations that are real but should be verified: specific implementing regulations, agency guidance, case holdings, thresholds, effective dates, newly enacted state statutes.
 > - `[verify-pinpoint]` — pinpoint citations (specific subsection letters, volume/page numbers, paragraph numbers, regulatory subpart references) carry the highest fabrication risk and should ALWAYS be verified against a primary source.
 >

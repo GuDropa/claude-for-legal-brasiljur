@@ -1,8 +1,8 @@
 ---
 name: use-case-triage
 description: >
-  Quickly determine whether a processing activity needs a PIA, a mandatory GDPR
-  DPIA, or can proceed — surfaces privacy policy conflicts and routes to the right
+  Quickly determine whether a processing activity needs a PIA, a mandatory RIPD
+  (LGPD/ANPD), or can proceed — surfaces privacy policy conflicts and routes to the right
   next step. Use when the user asks "does this need a PIA", "triage this feature",
   "privacy check on X", "is this okay from a privacy perspective", or describes a
   new data processing activity, product feature, or vendor relationship.
@@ -13,7 +13,7 @@ argument-hint: "[describe the data processing activity or feature]"
 
 1. Read `~/.claude/plugins/config/claude-for-legal/privacy-legal/CLAUDE.md`. Confirm privacy practice is configured — if not, stop and direct to setup.
 2. Run the workflow below. Clarify the activity if vague.
-3. House trigger check → mandatory DPIA check (if GDPR in footprint) → privacy policy conflict check.
+3. House trigger check → mandatory RIPD check (if LGPD in footprint) → privacy policy conflict check.
 4. Output: classification (PROCEED / PIA REQUIRED / DPIA MANDATORY / STOP), reasoning, conditions table if required, cross-plugin handoffs.
 5. Offer to continue into PIA generation if assessment is required.
 
@@ -55,7 +55,7 @@ The output is one of four classifications:
 
 ## Jurisdiction assumption
 
-This triage assumes the jurisdictional scope specified in your configuration. Privacy rules, assessment triggers, and lawful bases vary materially by jurisdiction (GDPR vs. state consumer privacy laws vs. sectoral). If the processing activity, controller, or affected data subjects fall under a different jurisdiction, this classification may not apply as written.
+This triage assumes the jurisdictional scope specified in your configuration. Privacy rules, assessment triggers, and lawful bases vary materially by jurisdiction (LGPD vs. leis setoriais). If the processing activity, controller, or affected data subjects fall under a different jurisdiction, this classification may not apply as written.
 
 ## Read the config first
 
@@ -73,7 +73,7 @@ If the file is missing or contains `[PLACEHOLDER]`, surface this bounce:
 
 ### Provisional mode
 
-If the user says "provisional," run triage normally using these generic defaults: middle risk appetite, lawyer role, US jurisdiction (CCPA + common federal sectoral baselines), no playbook (classify from general privacy-law principles rather than matching to configured commitments). Tag the reviewer note and every finding block with `[PROVISIONAL]`. At the end of the output, append:
+If the user says "provisional," run triage normally using these generic defaults: middle risk appetite, lawyer role, Brazilian jurisdiction (LGPD + bases setoriais comuns), no playbook (classify from general privacy-law principles rather than matching to configured commitments). Tag the reviewer note and every finding block with `[PROVISIONAL]`. At the end of the output, append:
 
 > "That was a generic run against default assumptions. Run `/privacy-legal:cold-start-interview` to get output calibrated to YOUR practice — your regulatory footprint, your privacy policy commitments, your risk appetite. 2 minutes."
 
@@ -121,7 +121,7 @@ activities need a PIA regardless of internal policy.
 > - **Data from children under 13 collected by an operator of an online service directed to children or with actual knowledge** (COPPA — parental consent, notice, deletion rights, strict limits on retention and sharing)?
 > - **Another sectoral federal regime** (e.g., VPPA for video-viewing records, CPNI for carrier data, DPPA for DMV records, TCPA for SMS/call consent)?
 >
-> If yes to any: the federal overlay usually supplies the controlling substantive restriction, not just an exemption from a state consumer privacy law. Research and cite the specific provision before continuing. An activity that is "exempt" from CCPA under § 1798.145(e) because it is GLBA-covered is still subject to the GLBA restrictions (e.g., § 6802(a)-(c) on NPI sharing) — the CCPA exemption does not make the activity lawful; it just moves the governing framework to GLBA.
+> If yes to any: the federal overlay usually supplies the controlling substantive restriction, not just an exemption from a state consumer privacy law. Research and cite the specific provision before continuing. Uma atividade sujeita à regulamentação setorial do BACEN/CMN (p.ex., dados financeiros de consumidores) ainda está sujeita à LGPD — LGPD e normas setoriais aplicam-se cumulativamente; a regulamentação setorial específica define requisitos adicionais sem afastar a LGPD.
 
 For each regime in `~/.claude/plugins/config/claude-for-legal/privacy-legal/CLAUDE.md` → `## Regulatory footprint`, **research the currently operative mandatory privacy/data-protection assessment triggers**. Cite controlling statute, regulation, or regulator guidance with pinpoint references. Note effective dates — national and state regulators publish and update trigger lists regularly; do not rely on a static checklist. Flag uncertainty for attorney verification rather than guess.
 
@@ -178,7 +178,7 @@ proceeds.
 **CLASSIFICATION:** [PROCEED / PIA REQUIRED / DPIA MANDATORY / STOP]
 
 **House trigger met?** [Yes / No]
-**GDPR mandatory DPIA trigger?** [Yes — [trigger] / No / N/A (GDPR not in footprint)]
+**Gatilho de RIPD obrigatório (LGPD/ANPD)?** [Sim — [gatilho] / Não / N/A (LGPD não no footprint regulatório)]
 **Privacy policy conflict?** [None / Yes — [specific conflict]]
 
 **Reasoning:**
@@ -200,8 +200,7 @@ is in conflict.]
 | [e.g., Consent mechanism built and tested] | [Product] | ☐ |
 | [e.g., Data subject rights process covers new data category] | [Privacy / Product] | ☐ |
 
-**Lawful basis (if GDPR in footprint):** [Consent / Contract / Legitimate Interest /
-Legal Obligation — or "unclear — needs determination in PIA"]
+**Base legal (LGPD art. 7º):** [Consentimento (art. 7º, I) / Contrato (art. 7º, V) / Legítimo interesse (art. 7º, IX) / Obrigação legal (art. 7º, II) — ou "a definir no RIPD"]
 
 **Next step — offer to continue:**
 
@@ -269,7 +268,7 @@ then expand each non-PROCEED entry:
 
 **"It's anonymized" doesn't automatically mean PROCEED.**
 Ask how it's anonymized and whether re-identification is realistically possible
-given the data set. Pseudonymized data is still personal data under GDPR.
+given the data set. Dados pseudonimizados ainda são dados pessoais sob a LGPD (art. 12, §1º).
 
 **"We already do something similar" isn't a triage.**
 Existing processing that was never assessed doesn't grandfather new processing.

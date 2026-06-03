@@ -45,7 +45,7 @@ If unclear, ask. Getting this wrong inverts every recommendation.
 
 ## Jurisdiction assumption
 
-This review assumes the jurisdictional scope specified in your configuration. Privacy rules, response deadlines, and lawful bases vary materially by jurisdiction (GDPR vs. state consumer privacy laws vs. sectoral). If the controller, processor, or data subjects are in a different jurisdiction than configured, this review may not apply as written.
+This review assumes the jurisdictional scope specified in your configuration. Privacy rules, response deadlines, and lawful bases vary materially by jurisdiction (LGPD vs. leis setoriais). If the controller, processor, or data subjects are in a different jurisdiction than configured, this review may not apply as written.
 
 ## Load prior context on this counterparty / activity
 
@@ -70,18 +70,18 @@ Read `~/.claude/plugins/config/claude-for-legal/privacy-legal/CLAUDE.md` → `##
 
 ## Federal sectoral overlay (ask first, before the term-by-term walk)
 
-Before walking the term-by-term review, answer: **does the data flowing through this DPA include any federally-regulated category?** GDPR and state consumer-privacy law supply one floor; federal sectoral law often supplies another that does not appear in the generic DPA playbook. A DPA that is GDPR-complete can still be GLBA-blind, HIPAA-blind, or COPPA-blind, and a fintech / healthtech / edtech / kidtech counterparty will notice.
+Before walking the term-by-term review, answer: **does the data flowing through this DPA include any federally-regulated category?** A LGPD fornece um patamar base; legislação setorial (normas do BACEN/CMN para dados financeiros, resoluções do CFM para dados de saúde, ECA para dados de crianças) frequentemente adiciona outra camada que não aparece no DPA genérico. Um DPA em conformidade com a LGPD pode ainda não atender exigências setoriais de GLBA, HIPAA ou COPPA, e uma contraparte fintech / healthtech / edtech / kidtech vai notar.
 
 > **Activity-based federal overlays — ask first:**
 >
 > Does this processing touch:
-> - **Financial account data or "nonpublic personal information" about consumers** (GLBA / Reg P)? If yes, the DPA needs: (a) an NPI-sharing restriction consistent with 15 U.S.C. § 6802(a)-(c) and Reg P (no sharing for marketing to non-affiliated third parties without opt-out / opt-in), (b) safeguards language aligned with the Safeguards Rule (16 C.F.R. Part 314), (c) incident notification that reaches FTC/OCC timing where applicable, (d) a clean carve-out so a CCPA § 1798.145(e) exemption doesn't accidentally waive GLBA-level obligations.
+> - **Financial account data or "nonpublic personal information" about consumers** (GLBA / Reg P)? If yes, the DPA needs: (a) an NPI-sharing restriction consistent with 15 U.S.C. § 6802(a)-(c) and Reg P (no sharing for marketing to non-affiliated third parties without opt-out / opt-in), (b) safeguards language aligned with the Safeguards Rule (16 C.F.R. Part 314), (c) incident notification that reaches FTC/OCC timing where applicable, (d) cláusula de compatibilidade com a LGPD e com a regulamentação setorial do BACEN/CMN aplicável, garantindo que as obrigações setoriais não sejam afastadas pelo contrato.
 > - **Protected health information held by a covered entity or business associate** (HIPAA Privacy / Security Rules)? If yes, the DPA needs: a Business Associate Agreement (BAA) layered with or integrated into the DPA per 45 C.F.R. § 164.504(e), breach notification timing aligned with HITECH (60 days to CE; CE 60 days to HHS; 500+ threshold for media), permitted-uses clause, subcontractor BAA flow-down. A commercial DPA without BAA flow-down for PHI is a defect.
 > - **Education records held by a school or a service provider acting for a school** (FERPA)? If yes, the DPA needs: a "school official" / directory-information framing consistent with 34 C.F.R. § 99.31, parental-consent flow-through, state student-privacy analog handling (NY Ed Law 2-d, CA SOPIPA, IL SOPPA).
 > - **Data from children under 13 collected by an operator of an online service directed to children or with actual knowledge** (COPPA)? If yes, the DPA needs: verifiable-parental-consent flow-through, retention limits, deletion-on-request machinery, prohibition on behavioral advertising absent VPC.
 > - **Another sectoral federal regime** (VPPA for video-viewing records, CPNI for carrier data, DPPA for DMV records, TCPA / Shaken-Stir for call/SMS, GLBA Reg S-P for broker-dealers, §5 FTC Act for unfair/deceptive practices around sensitive data)?
 >
-> If yes to any: the federal overlay usually supplies the controlling substantive restriction, not just an exemption from a state consumer privacy law. Research the currently-operative provision and cite it. A DPA that is "exempt" from CCPA under § 1798.145(e) because it is GLBA-covered is still subject to the GLBA restrictions — the CCPA exemption moves the governing framework, it doesn't eliminate it. Flag sectoral gaps in the deal-breakers list alongside GDPR / state-privacy gaps.
+> If yes to any: the federal overlay usually supplies the controlling substantive restriction, not just an exemption from a state consumer privacy law. Research the currently-operative provision and cite it. Um contrato sujeito à regulamentação setorial do BACEN/CMN ainda está sujeito à LGPD — LGPD e normas setoriais aplicam-se cumulativamente; a regulamentação setorial específica define requisitos adicionais sem afastar a LGPD. Inclua lacunas setoriais na lista de pontos críticos ao lado das lacunas da LGPD.
 
 If no sectoral overlay applies, note that explicitly — "no federally-regulated data categories identified; sectoral overlay n/a" — so the reviewing attorney sees that the check happened, rather than wondering whether it was skipped.
 
@@ -95,7 +95,7 @@ Walk every DPA through these terms, clause by clause. The *specific* numeric and
 >
 > **Source attribution tiering.** Tag every citation in the review — regulatory floors, SCC versions, adequacy decisions, regulator guidance, case law — with its source. For model-knowledge citations, use one of three tiers rather than a single blanket "verify" tag:
 >
-> - `[settled]` — stable, well-known statutory and regulatory references unlikely to have changed (e.g., GDPR Art. 28, Art. 33 72-hour breach notice, SCC Decision 2021/914 by number). Still verify before filing, but lower priority.
+> - `[settled]` — referências normativas estáveis e amplamente conhecidas com baixa probabilidade de alteração recente (ex.: LGPD art. 46 — medidas de segurança; LGPD art. 48 + Resolução CD/ANPD 2/2022 — comunicação de incidente em 2 dias úteis à ANPD). Ainda assim, verifique antes de usar em documentos oficiais.
 > - `[verify]` — model-knowledge citations that are real but should be verified: specific implementing regulations, regulator guidance, case holdings, adequacy decisions, SCC modules and versions, UK Addendum / IDTA status, thresholds, effective dates.
 > - `[verify-pinpoint]` — pinpoint citations (specific subsection letters, clause numbers within SCCs, paragraph numbers, volume/page references) carry the highest fabrication risk and should ALWAYS be verified against a primary source.
 >
@@ -146,7 +146,7 @@ Vendor DPAs try to give us nothing. For each clause below, compare to the contro
 The DPA you sign can't promise something the privacy policy doesn't cover, and vice versa.
 
 - If the DPA commits to processing only for purposes X, Y, Z — does the privacy policy list those purposes?
-- If the privacy policy says "we never sell data" — does any DPA clause look like a sale under CCPA?
+- If the privacy policy says "we never sell data" — does any DPA clause look like an unauthorized transfer or sharing under the LGPD (arts. 7º e 33-36)?
 - If the privacy policy names specific subprocessor categories — does the DPA subprocessor list match?
 
 Flag mismatches. They're usually the privacy policy being stale, not the DPA being wrong, but someone needs to fix one of them.

@@ -47,7 +47,7 @@ A PIA is a conversation with the product team, captured. It asks: what data, why
 
 ## Jurisdiction assumption
 
-This assessment assumes the jurisdictional scope specified in your configuration. Privacy rules, assessment triggers, and lawful bases vary materially by jurisdiction (GDPR vs. state consumer privacy laws vs. sectoral). If the processing activity, controller, or affected data subjects fall under a different jurisdiction, this analysis may not apply as written.
+This assessment assumes the jurisdictional scope specified in your configuration. Privacy rules, assessment triggers, and lawful bases vary materially by jurisdiction (LGPD vs. leis setoriais). If the processing activity, controller, or affected data subjects fall under a different jurisdiction, this analysis may not apply as written.
 
 ## Load prior context on this feature / activity
 
@@ -82,7 +82,7 @@ If the seed PIA structure is in the config CLAUDE.md, **use it**. The point is t
 
 Check the trigger criteria in `~/.claude/plugins/config/claude-for-legal/privacy-legal/CLAUDE.md`. That is the team's house answer.
 
-In addition, **research the currently operative mandatory-assessment triggers** for each regime in the regulatory footprint (GDPR/UK GDPR DPIA triggers, CCPA/CPRA risk-assessment triggers, other US state data-protection assessment triggers, sectoral regimes). Cite the controlling statute, regulation, or regulator guidance with pinpoint references. Verify currency — assessment thresholds and definitions shift through new state laws, rulemaking, and enforcement guidance. Flag uncertainty rather than guess.
+In addition, **research the currently operative mandatory-assessment triggers** for each regime in the regulatory footprint (gatilhos de RIPD obrigatório — LGPD art. 38 + Resolução CD/ANPD 2/2022, avaliação de risco LGPD para tratamento de dados sensíveis, leis setoriais). Cite the controlling statute, regulation, or regulator guidance with pinpoint references. Verify currency — assessment thresholds and definitions shift through new state laws, rulemaking, and enforcement guidance. Flag uncertainty rather than guess.
 
 > **No silent supplement.** If a research query to the configured legal research tool returns few or no results for a regime's DPIA / risk-assessment triggers or lawful-basis rules, report what was found and stop. Do NOT fill the gap from web search or model knowledge without asking. Say: "The search returned [N] results from [tool]. Coverage appears thin for [regime / question]. Options: (1) broaden the search query, (2) try a different research tool, (3) search the web — results will be tagged `[web search — verify]` and should be checked against a primary source before relying, or (4) flag as unverified and stop. Which would you like?" A lawyer decides whether to accept lower-confidence sources.
 >
@@ -114,8 +114,8 @@ Before writing anything, get answers to these from the product team. Conversatio
 
 For each applicable regime, **research the currently operative framework** for the question below and cite primary sources:
 
-- Under regimes that require an identified lawful basis for processing (e.g., GDPR, UK GDPR), identify the basis for each purpose (contract / legitimate interest / consent / legal obligation / vital interests / public task / other). Research the specific requirements and any balancing-test or consent-standard expectations; cite controlling authority.
-- Under regimes that regulate disclosures (e.g., CCPA/CPRA and other US state privacy laws), check whether any flow looks like a "sale," "share," or other regulated disclosure under the currently operative statutory definitions. Third-party advertising is a recurring trap — research whether it falls within the regulated category for the applicable regime.
+- Under regimes that require an identified lawful basis for processing (ex.: LGPD art. 7º), identify the basis for each purpose (contrato / legítimo interesse / consentimento / obrigação legal / tutela da saúde / outros). Research the specific requirements and any balancing-test or consent-standard expectations; cite controlling authority.
+- Under regimes that regulate disclosures (ex.: LGPD art. 5º, XI — tratamento e transferência de dados por terceiros), check whether any flow looks like an unauthorized transfer or sharing of data without adequate legal basis under the currently operative statutory definitions. Third-party advertising is a recurring trap — research whether it falls within the regulated category for the applicable regime.
 - Under sectoral regimes (HIPAA, GLBA, COPPA, FERPA, etc.), research any regime-specific basis or disclosure rules.
 
 Verify currency; statutory definitions and bases are amended often. Flag uncertainty for attorney verification.
@@ -236,7 +236,7 @@ Risks in a PIA should be **specific and tied to the design**, not generic. Bad r
 | Bad risk | Why bad | Better |
 |---|---|---|
 | "Data breach" | Applies to everything; says nothing | "Location history accessible by support staff via the admin panel without audit logging — a malicious insider could track a user undetected" |
-| "Non-compliance with GDPR" | Circular — the PIA is supposed to *assess* compliance | Name the specific article and the gap |
+| "Non-compliance with LGPD" | Circular — the PIA is supposed to *assess* compliance | Name the specific article and the gap |
 | "Users might not like it" | Vague | "Users who opted out of marketing may still receive this because the opt-out flag isn't checked in this flow" |
 
 Aim for 2-5 real risks, not 15 padded ones.
@@ -246,7 +246,7 @@ Aim for 2-5 real risks, not 15 padded ones.
 Every PIA should cross-check against the privacy policy commitments in `~/.claude/plugins/config/claude-for-legal/privacy-legal/CLAUDE.md`. The common drift:
 
 - Policy says "we collect X, Y, Z" — new feature collects W. Policy needs updating, or stop collecting W.
-- Policy says "we don't sell data" — new feature shares with an ad partner. That might be a CCPA sale.
+- Policy says "we don't sell data" — new feature shares with an ad partner. Isso pode configurar compartilhamento de dados sem base legal adequada sob a LGPD (art. 7º) ou transferência internacional sem os mecanismos dos arts. 33-36.
 - Policy says retention is "as long as your account is active" — new feature keeps data post-deletion.
 
 Flag every mismatch. One of them has to change before launch.

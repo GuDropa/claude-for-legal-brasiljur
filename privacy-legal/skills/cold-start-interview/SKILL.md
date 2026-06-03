@@ -208,7 +208,7 @@ Write `## Who's using this` and `## Available integrations` sections immediately
 - B2B, B2C, or both? Enterprise or SMB customers?
 
 **Regulatory footprint:**
-- Which regulations actually apply? GDPR? CCPA/CPRA? HIPAA? FERPA? Sector-specific? (This feeds `/reg-gap-analysis` — every new reg gets diffed against this list to see if it reaches you, and `/use-case-triage` uses it to spot which regimes apply to a new processing activity.)
+- Which regulations actually apply? LGPD? HIPAA? FERPA? Sector-specific? (This feeds `/reg-gap-analysis` — every new reg gets diffed against this list to see if it reaches you, and `/use-case-triage` uses it to spot which regimes apply to a new processing activity.)
 - Any regulators who know you by name yet? Open inquiries, consent decrees, anything?
 - Where does the data physically live? US only? EU? Multi-region?
 
@@ -306,7 +306,7 @@ If outputs aren't saved anywhere yet:
 [regions]. Privacy team is [N] people. [DPO name or "no formal DPO"]. Escalation
 goes to [GC / CPO / name].
 
-**Regulatory footprint:** [GDPR / CCPA / HIPAA / etc. — only list what applies]
+**Regulatory footprint:** [LGPD / HIPAA / etc. — somente o que se aplica]
 
 **Open regulatory matters:** [none / list]
 
@@ -446,7 +446,7 @@ If yes, show this tailored list (not a generic template — these are the concre
 > **Here's what I'm good at in privacy practice:**
 >
 > - **Review a DPA against your playbook** — e.g., "Auto-detects processor vs. controller; flags deviations from your positions." Try: `/privacy-legal:dpa-review`
-> - **Triage a processing activity** — e.g., "PIA, mandatory GDPR DPIA, or proceed — with privacy-policy conflict surfaces." Try: `/privacy-legal:use-case-triage`
+> - **Triage a processing activity** — e.g., "PIA, RIPD obrigatório (LGPD/ANPD), ou prosseguir — com conflitos de política de privacidade." Try: `/privacy-legal:use-case-triage`
 > - **Generate a PIA in house format** — e.g., "Structured intake, risk analysis, regulatory classification, recommendation." Try: `/privacy-legal:pia-generation`
 > - **Walk through a DSAR** — e.g., "Verify, locate, assess exemptions, draft the response letter." Try: `/privacy-legal:dsar-response`
 > - **Diff a new regulation against your policy** — e.g., "Outputs the gap list and a remediation plan with owners and deadlines." Try: `/privacy-legal:reg-gap-analysis`
@@ -493,6 +493,6 @@ This solves the cold-start problem (the supervisor doesn't know what to do first
 
 ## Failure modes
 
-- **Don't assume GDPR applies.** Lots of US-only B2B companies are told they "should probably care about GDPR" — ask whether they actually have EU data subjects.
+- **Não assuma que a LGPD não se aplica.** A LGPD aplica-se ao tratamento de dados de pessoas naturais no Brasil ou de dados coletados no território nacional — verifique se há tratamento de dados de titulares brasileiros ou coleta realizada no Brasil, independentemente de onde a empresa está sediada (LGPD art. 3º).
 - **Don't let them skip the controller/processor question.** If they're not sure, walk through it: "When your customer's user data comes into your system, whose privacy policy governs it — yours or the customer's?"
 - **Don't write a DPA playbook from generic positions.** If they haven't negotiated many DPAs, say so in the config CLAUDE.md: `[POSITIONS UNTESTED — this team hasn't negotiated many DPAs yet. Treat as starting points, not settled positions.]`
